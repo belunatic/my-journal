@@ -1,14 +1,11 @@
-console.log("Hello World");
+//global variable
+let data = null;
 
-let data = [
-	{
-		date: "Swiss Cheese Plant",
-		text: "Monstera",
-		last_updated_date: "Araceae",
-		
-];
-
-localStorage.setItem("journalData", JSON.stringify(data));
-localStorage.setItem("journalData2", data);
-console.log(JSON.parse(localStorage.getItem("journalData")));
-console.log(localStorage.getItem("journalData2"));
+//Check to see if our localstorage has been initiated
+if (!localStorage.getItem("journalData")) {
+	//initilize the localstorage
+	localStorage.setItem("journalData", data);
+} else {
+	//return the data in a JSON format
+	data = JSON.parse(localStorage.getItem("journalData"));
+}
