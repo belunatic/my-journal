@@ -36,3 +36,5 @@ function submitJournal() {
 	//add data tot he localstorage
 	localStorage.setItem("journalData", JSON.stringify(data));
 }
+
+//display function
