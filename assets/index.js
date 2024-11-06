@@ -9,6 +9,8 @@ if (!localStorage.getItem("journalData")) {
 	//return the data in a JSON format
 	data = JSON.parse(localStorage.getItem("journalData"));
 	console.log(data);
+	//display the Journal Entries these far
+	displayJournalEntries();
 }
 
 //set the journal data
@@ -37,6 +39,25 @@ function submitJournal() {
 	localStorage.setItem("journalData", JSON.stringify(data));
 	//reset the textarea
 	document.querySelector("#message").value = "";
+	//display the Journal Entries these far
+	displayJournalEntries();
 }
 
 //display function
+function displayJournalEntries() {
+	let journalEntryContainer = document.querySelector("#journalEntry");
+	//map thru the data to map it on the page
+	data.map((journal, i) => {
+		// create p tag for date and text
+		let divContainer = document.createElement("div");
+		let pDate = document.createElement("p");
+		let pText = document.createElement("p");
+		//add the text to the new p tags
+		pDate.textContent = journal.submittedDate;
+		pText.textContent = journal.text;
+		//append the element to show in front-end
+		divContainer.appendChild(pDate);
+		divContainer.appendChild(pText);
+		journalEntryContainer.appendChild(divContainer);
+	});
+}
