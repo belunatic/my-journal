@@ -1,14 +1,14 @@
 //global variable
-let data = null;
+let data = [];
 
 //Check to see if our localstorage has been initiated
-if (!localStorage.getItem("journalData") || !data) {
-	//initilize the localstorage
+if (!localStorage.getItem("journalData")) {
+	//initialize the localstorage
 	localStorage.setItem("journalData", data);
-	data = [];
 } else {
 	//return the data in a JSON format
 	data = JSON.parse(localStorage.getItem("journalData"));
+	console.log(data);
 }
 
 //set the journal data
@@ -31,10 +31,12 @@ function submittedJournalData() {
 document.querySelector(".submit").addEventListener("click", submitJournal);
 
 function submitJournal() {
-	//push the new journal data tot he fornt of the data array
+	//push the new journal data tot he front of the data array
 	data.unshift(submittedJournalData());
 	//add data tot he localstorage
 	localStorage.setItem("journalData", JSON.stringify(data));
+	//reset the textarea
+	document.querySelector("#message").value = "";
 }
 
 //display function
