@@ -10,11 +10,18 @@
 			href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,500;1,700;1,900&display=swap"
 			rel="stylesheet" />
 	</head>
-	<body>
-		<section id="title" class="flex flex-col p-[10px] justify-start">
+	<body class="flex flex-col p-[10px] justify-start">
+		<header>
+			<h1 class="text-5xl">My Journal</h1>
 			<div>
-				<h1 class="text-5xl">My Journal</h1>
+				<button id="newJournal" class="bg-orange-500 py-1 px-3 mt-2">
+					New
+				</button>
+			</div>
+		</header>
 
+		<section id="textArea">
+			<div>
 				<label
 					for="message"
 					class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
