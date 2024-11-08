@@ -56,8 +56,17 @@ function displayJournalEntries() {
 		pDate.textContent = journal.submittedDate;
 		pText.textContent = journal.text;
 		//append the element to show in front-end
-		divContainer.appendChild(pDate);
-		divContainer.appendChild(pText);
-		journalEntryContainer.appendChild(divContainer);
+		divContainer.appendChild(pText).classList.add("pb-[10px]", "pt-[5px]");
+		divContainer
+			.appendChild(pDate)
+			.classList.add(
+				"border-b-2",
+				"pb-[10px]",
+				"border-orange-500",
+				"text-orange-500",
+				"text-end"
+			);
+
+		journalEntryContainer.appendChild(divContainer).classList.add("my-[30px]");
 	});
 }
