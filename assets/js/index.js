@@ -39,6 +39,8 @@ function submitJournal() {
 	localStorage.setItem("journalData", JSON.stringify(data));
 	//reset the textarea
 	document.querySelector("#message").value = "";
+	//close the dialog after submitting
+	document.querySelector("dialog").close();
 	//display the Journal Entries these far
 	displayJournalEntries();
 }
