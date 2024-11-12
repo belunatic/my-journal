@@ -30,7 +30,7 @@ function submittedJournalData() {
 }
 
 //submit the journal
-document.querySelector(".submit").addEventListener("click", submitJournal);
+document.querySelector(".submitEntry").addEventListener("click", submitJournal);
 
 function submitJournal() {
 	//push the new journal data tot he front of the data array
