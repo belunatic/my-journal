@@ -14,28 +14,37 @@
 		<header>
 			<h1 class="text-5xl">My Journal</h1>
 			<div>
-				<button id="newJournal" class="bg-orange-500 py-1 px-3 mt-2">
+				<button
+					id="newJournal"
+					popovertarget="mypopover"
+					class="bg-orange-500 py-1 px-3 mt-2">
 					New
 				</button>
 			</div>
 		</header>
 
 		<section id="textArea">
-			<div>
-				<label
-					for="message"
-					class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-					>Your message</label
-				>
-				<textarea
-					id="message"
-					rows="4"
-					class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-					placeholder="Write your thoughts here..."></textarea>
-				<button
-					class="submit pl-0 p-[5px] ml-0 m-[10px] bg-blue-600 text-white w-24">
-					Submit
-				</button>
+			<div id="mypopover" popover class="p-4">
+				<div>
+					<label
+						for="message"
+						class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+						>Your message</label
+					>
+					<textarea
+						id="message"
+						rows="4"
+						class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+						placeholder="Write your thoughts here..."></textarea>
+					<button
+						class="submit pl-0 p-[5px] ml-0 m-[10px] bg-blue-600 text-white w-24">
+						Submit
+					</button>
+					<button
+						class="cancel pl-0 p-[5px] ml-0 m-[10px] bg-blue-600 text-white w-24">
+						Cancel
+					</button>
+				</div>
 			</div>
 			<div id="journalEntry"></div>
 		</section>
