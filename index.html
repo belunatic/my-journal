@@ -14,17 +14,14 @@
 		<header>
 			<h1 class="text-5xl">My Journal</h1>
 			<div>
-				<button
-					id="newJournal"
-					popovertarget="mypopover"
-					class="bg-orange-500 py-1 px-3 mt-2">
+				<button id="newJournal" class="bg-orange-500 py-1 px-3 mt-2">
 					New
 				</button>
 			</div>
 		</header>
 
 		<section id="textArea">
-			<div id="mypopover" popover class="p-4">
+			<dialog id="newJournalEntry" open class="p-4">
 				<div>
 					<label
 						for="message"
@@ -45,7 +42,7 @@
 						Cancel
 					</button>
 				</div>
-			</div>
+			</dialog>
 			<div id="journalEntry"></div>
 		</section>
 	</body>
