@@ -13,39 +13,51 @@ if (!localStorage.getItem("journalData")) {
 	displayJournalEntries();
 }
 
-//set the journal data
+//set the new journal entry data
 function submittedJournalData() {
-	//initiate the object
-	let dataSubmitted = {};
-	//id
-	dataSubmitted.id = Date.now();
-	//date
-	dataSubmitted.submittedDate = new Date().toLocaleString();
-	//text
-	dataSubmitted.text = document.querySelector("#message").value;
-	//if ever updated mark the date
-	dataSubmitted.dateUpdated = null;
+	let dataSubmittedText = document.querySelector("#message").value.trim();
+	// check to see if only whitespace exist in textarea and return false
+	if (!dataSubmittedText.length) {
+		return false;
+	} else {
+		//initiate the object
+		let dataSubmitted = {};
+		//id
+		dataSubmitted.id = Date.now();
+		//date
+		dataSubmitted.submittedDate = new Date().toLocaleString();
+		//text
+		dataSubmitted.text = dataSubmittedText;
+		//if ever updated mark the date
+		dataSubmitted.dateUpdated = null;
 
-	return dataSubmitted;
+		return dataSubmitted;
+	}
 }
 
 //submit the journal
 document.querySelector(".submitEntry").addEventListener("click", submitJournal);
 
 function submitJournal() {
-	//push the new journal data tot he front of the data array
-	data.unshift(submittedJournalData());
-	//add data tot he localstorage
-	localStorage.setItem("journalData", JSON.stringify(data));
-	//reset the textarea
-	document.querySelector("#message").value = "";
-	//close the dialog after submitting
-	document.querySelector("dialog").close();
-	//display the Journal Entries these far
-	displayJournalEntries();
+	// check the result of submitted journal entry
+	//if false is returned, alert a message
+	if (!submittedJournalData()) {
+		alert("NOTHING TO DO IT IS EMPTY");
+	} else {
+		//push the new journal data to the front of the data array
+		data.unshift(submittedJournalData());
+		//add data tot he localstorage
+		localStorage.setItem("journalData", JSON.stringify(data));
+		//reset the textarea
+		document.querySelector("#message").value = "";
+		//close the dialog after submitting
+		document.querySelector("dialog").close();
+		//display the Journal Entries these far
+		displayJournalEntries();
+	}
 }
 
-//display function
+//display Journals Entries function
 function displayJournalEntries() {
 	let journalEntryContainer = document.querySelector("#journalEntry");
 	//clear the container if anything is in it else do nothing.
