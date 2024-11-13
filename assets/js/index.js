@@ -48,6 +48,7 @@ function submitJournal() {
 //display function
 function displayJournalEntries() {
 	let journalEntryContainer = document.querySelector("#journalEntry");
+	//clear the container if anything is in it else do nothing.
 	journalEntryContainer.innerHTML ? (journalEntryContainer.innerHTML = "") : "";
 	//map thru the data to map it on the page
 	data.map((journal, i) => {
