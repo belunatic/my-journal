@@ -39,13 +39,17 @@ function submittedJournalData() {
 document.querySelector(".submitEntry").addEventListener("click", submitJournal);
 
 function submitJournal() {
+	//a variable to hold the submitted journal object
+	let journalObject = submittedJournalData();
 	// check the result of submitted journal entry
 	//if false is returned, alert a message
-	if (!submittedJournalData()) {
-		alert("NOTHING TO DO IT IS EMPTY");
+	//else submit the journal entry to localstorage
+	if (!journalObject) {
+		document.querySelector(".error").classList.remove("hidden");
 	} else {
+		document.querySelector(".error").classList.add("hidden");
 		//push the new journal data to the front of the data array
-		data.unshift(submittedJournalData());
+		data.unshift(journalObject);
 		//add data tot he localstorage
 		localStorage.setItem("journalData", JSON.stringify(data));
 		//reset the textarea
