@@ -2,9 +2,14 @@
 let data = [];
 
 //Check to see if our localstorage has been initiated
+//and setting the default message LocalStorage is empty
 if (!localStorage.getItem("journalData")) {
 	//initialize the localstorage
 	localStorage.setItem("journalData", data);
+	//set a default message for empty localStorage
+	document.querySelector(
+		"#journalEntry"
+	).innerHTML = `<h3 class="text-2xl py-3"> Welcome, ready to start your journaling journey 😊! </h3>`;
 } else {
 	//return the data in a JSON format
 	data = JSON.parse(localStorage.getItem("journalData"));
