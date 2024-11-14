@@ -1,5 +1,5 @@
 //prompt question when a user is stack on your journaling
-let promptQuestions = [
+let questions = [
 	"What are your favorite memories from childhood? Why do they stand out to you?",
 	"Who were the most 'present' adults in your life when you were growing up? What did you learn from them?",
 	"What did you wish was different about your childhood? How has that impacted who you are today?",
@@ -58,3 +58,16 @@ let promptQuestions = [
 	"What do you want your legacy to be?",
 	"How are you making the world a better place for those who come after you?",
 ];
+
+//retrieve the part we want to change on button click
+let promptQuestion = document.querySelector(".promptQuestion");
+let promptMessage = document.querySelector(".promptMessage");
+let stuckButton = document.querySelector(".stuckButton");
+
+stuckButton.addEventListener("click", () => {
+	//pick a random question from the array
+	let randomQuestion = Math.floor(Math.random() * questions.length);
+	//change the DOM text
+	promptQuestion.innerText = questions[randomQuestion];
+	promptMessage.innerText = "Your Answer";
+});
