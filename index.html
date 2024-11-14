@@ -25,7 +25,8 @@
 			<dialog id="newJournalEntry" class="p-4 w-full">
 				<div>
 					<label for="message" class="block mb-2 text-sm font-medium"
-						>Your message</label
+						><span class="block promptQuestion"></span>
+						<span class="block promptMessage">Your Message</span></label
 					>
 					<textarea
 						id="message"
@@ -39,6 +40,10 @@
 					<button
 						class="submitEntry pl-0 p-[5px] ml-0 m-[10px] bg-blue-600 text-white w-24">
 						Submit
+					</button>
+					<button
+						class="stuckButton pl-0 p-[5px] ml-0 m-[10px] bg-blue-600 text-white w-24">
+						Stuck
 					</button>
 					<button
 						class="cancelEntry pl-0 p-[5px] ml-0 m-[10px] bg-blue-600 text-white w-24">
