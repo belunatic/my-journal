@@ -1,5 +1,5 @@
 //retrieve the dialog from DOM
-let dialogBox = document.querySelector("dialog");
+let dialogBox = document.querySelector("#journal");
 // retrieve the cancel button
 let cancelButton = document.querySelector(".cancelEntry");
 //retrieve the new journal entry button
