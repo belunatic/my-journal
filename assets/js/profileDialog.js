@@ -9,6 +9,10 @@ if (!localStorage.getItem("profileData")) {
 	//hide the cancel button if profile data is empty
 	cancelProfileButton.classList.add("hidden");
 	profileDialog.showModal();
+} else {
+	// attach the profile name to the class 'profileName'
+	document.querySelector(".profileName").innerText =
+		localStorage.getItem("profileData");
 }
 
 //submit event listener function
