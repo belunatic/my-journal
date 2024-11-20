@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="assets/style.css"
 	</head>
 	<body
-		class="flex flex-col p-[10px] justify-start dark:bg-slate-800 dark:text-white">
+		class="flex flex-col p-4 md:px-8 justify-start dark:bg-slate-800 dark:text-white">
 		<header>
 			<h1 class="text-5xl">My Journal</h1>
 			<div>
@@ -25,7 +25,7 @@
 		<section>
 			<div id="journalEntry"></div>
 		</section>
-		<dialog id="journal" class="p-4 w-full">
+		<dialog id="journal" class="p-4 w-full md:w-3/4 dark:bg-black dark:text-white">
 			<div>
 				<label for="message" class="block mb-2 text-sm font-medium"
 					><span
@@ -35,7 +35,7 @@
 				<textarea
 					id="message"
 					rows="4"
-					class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+					class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-orange-600 focus:border-orange-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-600 dark:focus:border-orange-600"
 					placeholder="Write your thoughts here..."></textarea>
 				<p class="error text-red-500 pt-2 hidden">
 					*Take your time, no rush, I am sure your got something to journal
@@ -55,9 +55,9 @@
 				</button>
 			</div>
 		</dialog>
-		<dialog id="profile" class="p-4 w-64">
+		<dialog id="profile" class="p-4 w-64 md:w-1/2">
 				<div>
-					<label for="message" class="block mb-2 text-sm font-medium"
+					<label for="name" class="block mb-2 text-sm font-medium"
 						><span
 							class="block py-1.5 text-base text-orange-600 promptQuestion"></span>
 						<span class="block py-1.5 promptMessage">Name</span></label
@@ -65,7 +65,7 @@
 					<input
 						id="name"
 						type="text"
-						class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+						class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-orange-600 focus:border-orange-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-600 dark:focus:border-orange-600"
 						placeholder="Abel"></input>
 					<p class="error-name text-red-500 pt-2 hidden">
 						*please enter a name
