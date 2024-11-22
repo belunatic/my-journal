@@ -8,6 +8,8 @@ let cancelProfileButton = document.querySelector(".cancelProfile");
 if (!localStorage.getItem("profileData")) {
 	//hide the cancel button if profile data is empty
 	cancelProfileButton.classList.add("hidden");
+	//hide the edit Profile button
+	document.querySelector("#editProfileButton").classList.add("hidden");
 	profileDialog.showModal();
 } else {
 	// attach the profile name to the class 'profileName'
