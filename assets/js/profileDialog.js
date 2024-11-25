@@ -31,6 +31,8 @@ function submitProfile() {
 		localStorage.setItem("profileData", profileName);
 		//update the name site wise
 		document.querySelector(".profileName").innerText = profileName;
+		//show the edit profile button
+		document.querySelector("#editProfileButton").classList.remove("hidden");
 		profileDialog.close();
 	}
 }
